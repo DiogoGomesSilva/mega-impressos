@@ -14,4 +14,4 @@ Abra `index.html` no navegador. Não há build nem dependências.
 
 ## Contato usado no site
 
-WhatsApp +55 81 99419-2339 · Instagram @megaimpressos3
+WhatsApp +55 81 99419-2339 · Instagram @megaimpressos3 · E-mail mandeseutrabalho@gmail.com
