@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <div class="cmyk"><span></span><span></span><span></span><span></span></div>
@@ -18,7 +18,8 @@
     <span class="logo"><span>M</span></span>
     <span class="brand-name">Mega Impressos<small>Gráfica rápida</small></span>
   </a>
-  <nav class="links" aria-label="Principal">
+  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav class="links" id="menu" aria-label="Principal">
     <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
   </nav>
   <a class="btn btn-dark" href="https://wa.me/5581994192339">Falar no WhatsApp</a>
@@ -106,5 +107,11 @@
   <div><b>Contato</b><a href="https://wa.me/5581994192339">+55 81 99419-2339</a><small>Fale pelo WhatsApp</small><a href="https://instagram.com/megaimpressos3">@megaimpressos3</a><small>Nos siga no Instagram</small><a href="mailto:mandeseutrabalho@gmail.com">mandeseutrabalho@gmail.com</a><small>Envie seu arquivo por e-mail</small></div>
   <div><b>Endereço</b><span>Igarassu – PE</span><small>Entre em contato</small><span>Seg à Sexta 07:30 às 17h</span><span>Sáb 08h às 12h</span></div>
 </footer>
+<script>
+(function(){var b=document.querySelector('.menu-btn'),m=document.getElementById('menu');
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+b.addEventListener('click',function(){set(!m.classList.contains('open'));});
+m.addEventListener('click',function(e){if(e.target.tagName==='A')set(false);});})();
+</script>
 </body>
 </html>
