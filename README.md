@@ -10,7 +10,7 @@ Abra `index.html` no navegador. Não há build nem dependências.
 
 - `index.html`: página única (início, serviços, portfólio, sobre, contato)
 - `css/style.css`: estilos e responsividade
-- `img/`: coloque aqui as fotos reais e o logo (hoje há blocos coloridos no lugar)
+- `img/`: ilustrações vetoriais (SVG) dos serviços e do portfólio; troque por fotos reais quando tiver
 
 ## Contato usado no site
 
