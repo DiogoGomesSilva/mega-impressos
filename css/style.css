@@ -42,7 +42,13 @@ h1,h2,h3{font-family:var(--display);margin:0}
 .c1{right:0;top:0;width:340px;height:340px;background:var(--cyan)}
 .c2{right:150px;top:150px;width:220px;height:220px;background:var(--magenta);mix-blend-mode:multiply}
 .c3{right:20px;top:200px;width:200px;height:200px;background:var(--yellow);mix-blend-mode:multiply}
-.card-mock{position:absolute;left:10px;bottom:0;width:230px;height:140px;background:#fff;border:1px solid var(--ink);transform:rotate(-6deg);box-shadow:8px 8px 0 var(--ink);display:flex;align-items:center;justify-content:center;font:800 20px var(--display)}
+.card-mock{position:absolute;left:0;bottom:0;width:320px;height:190px;background:#fff;border:1px solid var(--ink);transform:rotate(-6deg);box-shadow:8px 8px 0 var(--ink);padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;border-top:8px solid var(--magenta)}
+.cm-top{display:flex;align-items:center;gap:10px}
+.cm-top .logo{width:36px;height:36px}.cm-top .logo span{width:24px;height:24px;font-size:14px}
+.cm-top b{font:800 18px/1 var(--display);letter-spacing:-.02em}
+.cm-top small{display:block;font:500 9px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.card-mock ul{list-style:none;margin:0;padding:0;font-size:13px;line-height:1.6;font-weight:500}
+.card-mock em{font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
 .strip{display:grid;grid-template-columns:repeat(3,1fr);border-block:2px solid var(--ink);margin:0 var(--pad)}
 .strip div{padding:26px 28px;border-right:2px solid var(--ink)}.strip div:last-child{border:0}
