@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/personalizador.css?v=2">
 </head>
 <body>
 <div class="cmyk"><span></span><span></span><span></span><span></span></div>
@@ -57,14 +58,15 @@
     <h2>Tudo o que você<br>precisa em gráfica.</h2>
     <p>Soluções em impressão para divulgar sua marca com qualidade, rapidez e profissionalismo.</p>
   </div>
+  <p class="hint-click">Clique em um produto para montar o seu e ver como vai ficar, com a sua própria foto.</p>
   <div class="grid-services">
-    <article class="service"><img class="thumb" src="img/cartoes.svg" alt="Cartões de visita" loading="lazy"><h3>Cartões de visita</h3><p>Alta qualidade para causar boa impressão.</p></article>
-    <article class="service"><img class="thumb" src="img/adesivos.svg" alt="Adesivos" loading="lazy"><h3>Adesivos</h3><p>Personalizados em diversos tamanhos e formatos.</p></article>
-    <article class="service"><img class="thumb" src="img/rotulos.svg" alt="Rótulos" loading="lazy"><h3>Rótulos</h3><p>Para produtos, embalagens e muito mais.</p></article>
-    <article class="service"><img class="thumb" src="img/panfletos.svg" alt="Panfletos" loading="lazy"><h3>Panfletos</h3><p>Divulgue sua empresa com mais alcance.</p></article>
-    <article class="service"><img class="thumb" src="img/banners.svg" alt="Banners" loading="lazy"><h3>Banners</h3><p>Comunicação visual para o seu negócio.</p></article>
-    <article class="service"><img class="thumb" src="img/etiquetas.svg" alt="Etiquetas" loading="lazy"><h3>Etiquetas</h3><p>Em diversos tamanhos e aplicações.</p></article>
-    <article class="service"><img class="thumb" src="img/geral.svg" alt="Impressões em geral" loading="lazy"><h3>Impressões em geral</h3><p>Trabalhos personalizados para sua demanda.</p></article>
+    <button type="button" class="service" data-produto="cartoes"><img class="thumb" src="img/cartoes.svg" alt="Cartões de visita" loading="lazy"><h3>Cartões de visita</h3><p>Alta qualidade para causar boa impressão.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="adesivos"><img class="thumb" src="img/adesivos.svg" alt="Adesivos" loading="lazy"><h3>Adesivos</h3><p>Personalizados em diversos tamanhos e formatos.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="rotulos"><img class="thumb" src="img/rotulos.svg" alt="Rótulos" loading="lazy"><h3>Rótulos</h3><p>Para produtos, embalagens e muito mais.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="panfletos"><img class="thumb" src="img/panfletos.svg" alt="Panfletos" loading="lazy"><h3>Panfletos</h3><p>Divulgue sua empresa com mais alcance.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="banners"><img class="thumb" src="img/banners.svg" alt="Banners" loading="lazy"><h3>Banners</h3><p>Comunicação visual para o seu negócio.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="etiquetas"><img class="thumb" src="img/etiquetas.svg" alt="Etiquetas" loading="lazy"><h3>Etiquetas</h3><p>Em diversos tamanhos e aplicações.</p><span class="pz-cta">Personalizar →</span></button>
+    <button type="button" class="service" data-produto="geral"><img class="thumb" src="img/geral.svg" alt="Impressões em geral" loading="lazy"><h3>Impressões em geral</h3><p>Trabalhos personalizados para sua demanda.</p><span class="pz-cta">Personalizar →</span></button>
     <a class="service service-cta" href="https://wa.me/5581994192339"><span>Outro projeto? Conte pra gente.</span><b>Pedir orçamento →</b></a>
   </div>
 </section>
@@ -107,6 +109,57 @@
   <div><b>Contato</b><a href="https://wa.me/5581994192339">+55 81 99419-2339</a><small>Fale pelo WhatsApp</small><a href="https://instagram.com/megaimpressos3">@megaimpressos3</a><small>Nos siga no Instagram</small><a href="mailto:mandeseutrabalho@gmail.com">mandeseutrabalho@gmail.com</a><small>Envie seu arquivo por e-mail</small></div>
   <div><b>Endereço</b><span>Igarassu – PE</span><small>Entre em contato</small><span>Seg à Sexta 07:30 às 17h</span><span>Sáb 08h às 12h</span></div>
 </footer>
+
+<dialog id="pz" class="pz" aria-labelledby="pz-title">
+  <button type="button" class="pz-x" id="pz-x" aria-label="Fechar">&times;</button>
+  <div class="pz-wrap">
+    <div class="pz-stage">
+      <h2 id="pz-title">Personalizar</h2>
+      <canvas id="pz-canvas" width="900" height="500" aria-label="Prévia do produto"></canvas>
+      <p class="pz-hint">Arraste a foto para posicionar e use a roda do mouse para dar zoom. Sua foto fica só no seu aparelho e não é enviada para lugar nenhum.</p>
+    </div>
+    <div class="pz-panel">
+      <div class="pz-group">
+        <b>1. Sua foto ou logo</b>
+        <div class="pz-row">
+          <label class="btn-file"><input type="file" id="pz-file" accept="image/*">Escolher foto</label>
+          <button type="button" class="pz-link" id="pz-rm" hidden>Remover foto</button>
+        </div>
+        <label class="pz-field"><span>Como usar a foto</span>
+          <select id="pz-mode"><option value="logo">Logo / quadro pequeno</option><option value="fundo">Foto de fundo</option><option value="faixa">Faixa no topo</option></select></label>
+        <div id="pz-adjust" class="pz-group" hidden>
+          <label class="pz-field"><span>Encaixe</span>
+            <select id="pz-fit"><option value="cover">Preencher (corta as bordas)</option><option value="contain">Mostrar inteira</option></select></label>
+          <label class="pz-field"><span>Zoom</span><input type="range" id="pz-zoom" min="100" max="300" value="100" aria-label="Zoom da foto"></label>
+        </div>
+      </div>
+      <div class="pz-group">
+        <b>2. Formato</b>
+        <label class="pz-field" id="pz-shape-row"><span>Forma</span><select id="pz-shape"></select></label>
+        <label class="pz-field" id="pz-size-row"><span>Tamanho</span><select id="pz-size"></select></label>
+      </div>
+      <div class="pz-group">
+        <b>3. Textos</b>
+        <div id="pz-texts" class="pz-group"></div>
+      </div>
+      <div class="pz-group">
+        <b>4. Cores</b>
+        <div class="pz-presets" id="pz-presets"></div>
+        <div class="pz-colors">
+          <label>Fundo<input type="color" id="pz-bg" value="#ffffff"></label>
+          <label>Texto<input type="color" id="pz-tx" value="#14141a"></label>
+          <label>Destaque<input type="color" id="pz-ac" value="#e5007d"></label>
+        </div>
+      </div>
+      <div class="pz-actions">
+        <a class="btn btn-green" id="pz-wa" href="https://wa.me/5581994192339" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+        <button type="button" class="btn btn-outline" id="pz-dl">Baixar prévia (PNG)</button>
+        <p class="pz-note">Dica: baixe a prévia e envie a imagem junto no WhatsApp. A prévia é uma simulação; a arte final é conferida com você antes de imprimir.</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script src="js/personalizador.js?v=2"></script>
 <script>
 (function(){var b=document.querySelector('.menu-btn'),m=document.getElementById('menu');
 function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
