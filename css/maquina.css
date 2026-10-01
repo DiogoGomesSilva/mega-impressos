@@ -1,0 +1,38 @@
+/* Máquina de banner animada (topo do site). 10 s por ciclo: imprime (0–65%), segura, corta e reinicia */
+.mq{display:block;width:100%;max-width:540px;height:auto;margin-inline:auto}
+.mq text{font-family:'Bricolage Grotesque',sans-serif}
+.mq-head{animation:mq-head 10s linear infinite}
+.mq-banner{animation:mq-banner 10s linear infinite}
+.mq-led{animation:mq-led 10s steps(1) infinite}
+.mq-cut{animation:mq-cut 10s linear infinite;opacity:0}
+.mq-ink{animation:mq-ink .5s ease-in-out infinite alternate}
+@keyframes mq-banner{
+  0%{transform:translateY(-262px);opacity:1}
+  65%{transform:translateY(0);opacity:1}
+  86%{transform:translateY(0);opacity:1}
+  94%{transform:translateY(46px);opacity:0}
+  99.9%{transform:translateY(-262px);opacity:0}
+  100%{transform:translateY(-262px);opacity:1}
+}
+@keyframes mq-led{0%{fill:#FFD400}65%{fill:#2BD46B}94%{fill:#FFD400}}
+@keyframes mq-cut{0%,66%{opacity:0}67%{opacity:1}70%{opacity:1}72%,100%{opacity:0}}
+@keyframes mq-ink{from{opacity:.55}to{opacity:1}}
+@keyframes mq-head{
+  0.00%{transform:translateX(0px)}
+  8.12%{transform:translateX(300px)}
+  16.25%{transform:translateX(0px)}
+  24.38%{transform:translateX(300px)}
+  32.50%{transform:translateX(0px)}
+  40.62%{transform:translateX(300px)}
+  48.75%{transform:translateX(0px)}
+  56.88%{transform:translateX(300px)}
+  65.00%{transform:translateX(0px)}
+  69.00%{transform:translateX(150px)}
+  100%{transform:translateX(150px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .mq-head,.mq-banner,.mq-led,.mq-cut,.mq-ink{animation:none}
+  .mq-head{transform:translateX(150px)}
+  .mq-banner{transform:translateY(0)}
+  .mq-led{fill:#2BD46B}
+}

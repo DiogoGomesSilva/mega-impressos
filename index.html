@@ -8,8 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=13">
 <link rel="stylesheet" href="css/personalizador.css?v=2">
+<link rel="stylesheet" href="css/maquina.css">
 </head>
 <body>
 <div class="cmyk"><span></span><span></span><span></span><span></span></div>
@@ -37,13 +38,52 @@
       <a class="btn btn-outline" href="#contato">Solicitar orçamento</a>
     </div>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <i class="c1"></i><i class="c2"></i><i class="c3"></i>
-    <div class="card-mock">
-      <div class="cm-top"><span class="logo"><span>M</span></span><b>Mega Impressos<small>Gráfica rápida</small></b></div>
-      <ul><li>(81) 99419-2339</li><li>@megaimpressos3</li><li>mandeseutrabalho@gmail.com</li></ul>
-      <em>Igarassu – PE</em>
-    </div>
+  <div class="hero-art">
+<svg class="mq" viewBox="0 0 520 470" role="img" aria-label="Máquina imprimindo um banner colorido">
+  <defs>
+    <clipPath id="mq-out"><rect x="60" y="150" width="400" height="300"/></clipPath>
+    <linearGradient id="mq-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3A45"/><stop offset="1" stop-color="#22222A"/></linearGradient>
+  </defs>
+  <ellipse cx="260" cy="448" rx="230" ry="12" fill="#14141A" opacity=".14"/>
+  <!-- pernas -->
+  <rect x="78" y="150" width="14" height="296" rx="4" fill="#55555F"/>
+  <rect x="428" y="150" width="14" height="296" rx="4" fill="#55555F"/>
+  <rect x="56" y="438" width="58" height="10" rx="5" fill="#14141A"/>
+  <rect x="406" y="438" width="58" height="10" rx="5" fill="#14141A"/>
+  <!-- banner saindo -->
+  <g clip-path="url(#mq-out)">
+    <g class="mq-banner">
+      <rect x="110" y="146" width="300" height="262" fill="#fff"/>
+      <rect x="110" y="146" width="300" height="108" fill="#00A6D6"/>
+      <circle cx="260" cy="200" r="38" fill="#FFD400"/>
+      <circle cx="260" cy="200" r="22" fill="#E5007D"/>
+      <rect x="110" y="254" width="300" height="10" fill="#14141A"/>
+      <text x="260" y="304" text-anchor="middle" font-size="30" font-weight="800" fill="#14141A">SUA MARCA</text>
+      <text x="260" y="336" text-anchor="middle" font-size="30" font-weight="800" fill="#E5007D">AQUI</text>
+      <rect x="170" y="352" width="180" height="8" rx="4" fill="#9a9aa4"/>
+      <rect x="110" y="388" width="100" height="20" fill="#6B3FA0"/>
+      <rect x="210" y="388" width="100" height="20" fill="#FF7A00"/>
+      <rect x="310" y="388" width="100" height="20" fill="#0E7C3F"/>
+    </g>
+  </g>
+  <!-- linha de corte -->
+  <rect class="mq-cut" x="100" y="404" width="320" height="4" fill="#E5007D"/>
+  <!-- corpo da máquina -->
+  <rect x="40" y="30" width="440" height="124" rx="16" fill="url(#mq-body)"/>
+  <rect x="40" y="30" width="440" height="16" rx="8" fill="#55555F"/>
+  <rect x="56" y="64" width="408" height="52" rx="8" fill="#0E0E13"/>
+  <rect x="70" y="88" width="380" height="4" rx="2" fill="#55555F"/>
+  <!-- cabeça de impressão -->
+  <g transform="translate(70 0)"><g class="mq-head">
+    <rect x="0" y="70" width="44" height="38" rx="6" fill="#E8E8EE"/>
+    <rect x="6" y="76" width="8" height="12" fill="#00A6D6"/><rect x="18" y="76" width="8" height="12" fill="#E5007D"/><rect x="30" y="76" width="8" height="12" fill="#FFD400"/>
+    <rect class="mq-ink" x="10" y="108" width="24" height="5" rx="2.5" fill="#E5007D"/>
+  </g></g>
+  <circle class="mq-led" cx="452" cy="138" r="5" fill="#FFD400"/>
+  <text x="62" y="140" font-size="14" font-weight="800" fill="#E8E8EE" letter-spacing="1">MEGA IMPRESSOS</text>
+  <!-- boca de saída -->
+  <rect x="96" y="146" width="328" height="10" rx="3" fill="#0E0E13"/>
+</svg>
   </div>
 </section>
 

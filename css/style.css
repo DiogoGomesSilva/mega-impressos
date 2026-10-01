@@ -115,3 +115,8 @@ h1,h2,h3{font-family:var(--display);margin:0}
   .brand-name{font-size:19px}
   .brand-name small{display:none}
 }
+
+/* topo: a máquina animada substitui a arte antiga */
+.hero-art{height:auto}
+@media (max-width:960px){.hero-art{height:auto;max-width:440px;margin-inline:auto}}
+@media (max-width:560px){.hero-art{height:auto;overflow:visible}}
